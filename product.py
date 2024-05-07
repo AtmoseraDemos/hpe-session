@@ -3,8 +3,8 @@ from datetime import datetime
 
 # Add constant values for minimum and maximum price
 class Product:
-    MIN_PRICE = 0
-    MAX_PRICE = 1000000
+    MIN_PRICE = 1000
+    MAX_PRICE = 100000
 
     def __init__(self, id, name, description, price, category_id):
         self.id = id
@@ -50,7 +50,7 @@ class Product:
     def set_price(self, price):
         # Check if price is within the range, if not raise an exception
         if price < Product.MIN_PRICE or price > Product.MAX_PRICE:
-            raise ValueError(f"Price must be between {Product.MIN_PRICE} and {Product.MAX_PRICE}")
+            raise ValueError(f"Price outside range {Product.MIN_PRICE} and {Product.MAX_PRICE}")
 
         self.price = price
 
